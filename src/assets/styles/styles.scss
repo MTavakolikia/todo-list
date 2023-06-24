@@ -1,0 +1,25 @@
+$primary_color: #2ea8df;
+$secondary_color: #c5def4;
+$bg_color: #3b3b3b;
+
+html,
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  width: 95%;
+  height: 80vh;
+  margin: auto;
+  background-color: $bg_color;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  color: $primary_color;
+}
