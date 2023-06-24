@@ -1,25 +1,138 @@
 $primary_color: #2ea8df;
 $secondary_color: #c5def4;
 $bg_color: #3b3b3b;
+$text_color: rgb(252, 252, 252);
 
-html,
-body {
+* {
+  font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
 }
 
-.container {
-  width: 95%;
-  height: 80vh;
-  margin: auto;
-  background-color: $bg_color;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+body {
+  background: $bg_color;
+  color: $text_color;
+  max-width: 400px;
+  padding: 1rem;
+  margin: 0 auto;
 }
 
 h1 {
   color: $primary_color;
+}
+
+.new-item-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.btn {
+  background: hwb(199 18% 13% / 0.219);
+  border: $primary_color 1px solid;
+  color: $primary_color;
+  padding: 0.25em 0.5em;
+  border-radius: 0.25em;
+  cursor: pointer;
+  outline: none;
+
+  &:hover,
+  &:focus-visible {
+    background: $bg_color;
+  }
+
+  &.btn-danger {
+    background: $bg_color;
+    border: 1px solid red;
+    color: red;
+    &:hover,
+    &:focus-visible {
+      background: rgba(255, 0, 0, 0.219);
+    }
+  }
+}
+
+.new-item-form input {
+  outline: none;
+  border: 2px solid $primary_color;
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  &:focus {
+    border: 3px solid $primary_color;
+  }
+}
+
+.header {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  margin-left: 1rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  & li:has(input:checked) label {
+    color: red;
+  }
+
+  & li {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    align-items: center;
+    border-bottom: 1px solid white;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    & label {
+      display: flex;
+      gap: 0.5rem;
+      cursor: pointer;
+      align-items: center;
+    }
+    &:has(input:focus-visible) label {
+      outline: 1px solid $primary_color;
+    }
+    & input {
+      outline: none;
+      width: 0;
+      height: 0;
+      appearance: none;
+      pointer-events: none;
+      position: absolute;
+    }
+    & label::before {
+      content: "";
+      display: block;
+      width: 0.9rem;
+      height: 0.9rem;
+      background: hsl(200, 100%, 90%);
+      border-radius: 0.25em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    & label:hover::before {
+      background: hsl(200, 100%, 80%);
+    }
+    &:has(input:checked) label::before {
+      content: "✔";
+      background: hsl(200, 100%, 40%);
+      color: hsl(200, 100%, 90%);
+      font-size: 0.75rem;
+      font-weight: bold;
+    }
+    &li:has(input:checked) label:hover::before {
+      background: hsl(200, 100%, 30%);
+    }
+  }
 }

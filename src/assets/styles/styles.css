@@ -1,17 +1,153 @@
-html,
-body {
+@charset "UTF-8";
+* {
+  font-family: Arial, Helvetica, sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 0;
-  margin: 0;
 }
 
-.container {
-  width: 95%;
-  height: 80vh;
-  margin: auto;
-  background-color: #3b3b3b;
-  padding: 10px;
+body {
+  background: #3b3b3b;
+  color: #fcfcfc;
+  max-width: 400px;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #2ea8df;
+}
+
+.new-item-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.1rem;
+}
+
+.btn {
+  background: hwb(199 18% 13%/0.219);
+  border: #2ea8df 1px solid;
+  color: #2ea8df;
+  padding: 0.25em 0.5em;
+  border-radius: 0.25em;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn:hover, .btn:focus-visible {
+  background: #3b3b3b;
+}
+
+.btn.btn-danger {
+  background: #3b3b3b;
+  border: 1px solid red;
+  color: red;
+}
+
+.btn.btn-danger:hover, .btn.btn-danger:focus-visible {
+  background: rgba(255, 0, 0, 0.219);
+}
+
+.new-item-form input {
+  outline: none;
+  border: 2px solid #2ea8df;
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+}
+
+.new-item-form input:focus {
+  border: 3px solid #2ea8df;
+}
+
+.header {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  margin-left: 1rem;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.3rem;
+}
+
+.list li:has(input:checked) label {
+  color: red;
+}
+
+.list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 0.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid white;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+
+.list li label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
+  cursor: pointer;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.list li:has(input:focus-visible) label {
+  outline: 1px solid #2ea8df;
+}
+
+.list li input {
+  outline: none;
+  width: 0;
+  height: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  pointer-events: none;
+  position: absolute;
+}
+
+.list li label::before {
+  content: "";
+  display: block;
+  width: 0.9rem;
+  height: 0.9rem;
+  background: #cceeff;
+  border-radius: 0.25em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -23,7 +159,19 @@ body {
           align-items: center;
 }
 
-h1 {
-  color: #2ea8df;
+.list li label:hover::before {
+  background: #99ddff;
+}
+
+.list li:has(input:checked) label::before {
+  content: "✔";
+  background: #0088cc;
+  color: #cceeff;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.list lili:has(input:checked) label:hover::before {
+  background: #006699;
 }
 /*# sourceMappingURL=styles.css.map */
