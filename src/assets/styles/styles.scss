@@ -99,40 +99,8 @@ h1 {
       cursor: pointer;
       align-items: center;
     }
-    &:has(input:focus-visible) label {
+    & :has(input:focus-visible) label {
       outline: 1px solid $primary_color;
-    }
-    & input {
-      outline: none;
-      width: 0;
-      height: 0;
-      appearance: none;
-      pointer-events: none;
-      position: absolute;
-    }
-    & label::before {
-      content: "";
-      display: block;
-      width: 0.9rem;
-      height: 0.9rem;
-      background: hsl(200, 100%, 90%);
-      border-radius: 0.25em;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    & label:hover::before {
-      background: hsl(200, 100%, 80%);
-    }
-    &:has(input:checked) label::before {
-      content: "✔";
-      background: hsl(200, 100%, 40%);
-      color: hsl(200, 100%, 90%);
-      font-size: 0.75rem;
-      font-weight: bold;
-    }
-    &li:has(input:checked) label:hover::before {
-      background: hsl(200, 100%, 30%);
     }
   }
 }
