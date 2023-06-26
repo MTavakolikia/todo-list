@@ -12,7 +12,7 @@ body {
   background: $bg_color;
   color: $text_color;
   max-width: 400px;
-  padding: 1rem;
+  padding: 5rem 1rem;
   margin: 0 auto;
 }
 
@@ -76,21 +76,18 @@ h1 {
 .list {
   margin: 0;
   padding: 0;
-  margin-left: 1rem;
+  margin-left: 0.3rem;
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
-  & li:has(input:checked) label {
-    color: red;
-  }
 
   & li {
     display: flex;
     justify-content: space-between;
     gap: 0.5rem;
     align-items: center;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid rgb(206, 206, 206);
     padding-bottom: 5px;
     margin-bottom: 5px;
     & label {
@@ -102,5 +99,15 @@ h1 {
     & :has(input:focus-visible) label {
       outline: 1px solid $primary_color;
     }
+  }
+}
+.check-parent {
+  display: flex;
+  & input {
+    margin-right: 10px;
+  }
+  & .check-with-label:checked + .label-for-check {
+    color: $secondary_color;
+    text-decoration: line-through;
   }
 }

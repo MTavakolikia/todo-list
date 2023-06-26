@@ -8,7 +8,7 @@ body {
   background: #3b3b3b;
   color: #fcfcfc;
   max-width: 400px;
-  padding: 1rem;
+  padding: 5rem 1rem;
   margin: 0 auto;
 }
 
@@ -82,7 +82,7 @@ h1 {
 .list {
   margin: 0;
   padding: 0;
-  margin-left: 1rem;
+  margin-left: 0.3rem;
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -92,10 +92,6 @@ h1 {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 0.3rem;
-}
-
-.list li:has(input:checked) label {
-  color: red;
 }
 
 .list li {
@@ -109,7 +105,7 @@ h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #cecece;
   padding-bottom: 5px;
   margin-bottom: 5px;
 }
@@ -127,5 +123,20 @@ h1 {
 
 .list li :has(input:focus-visible) label {
   outline: 1px solid #2ea8df;
+}
+
+.check-parent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.check-parent input {
+  margin-right: 10px;
+}
+
+.check-parent .check-with-label:checked + .label-for-check {
+  color: #c5def4;
+  text-decoration: line-through;
 }
 /*# sourceMappingURL=styles.css.map */
